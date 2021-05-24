@@ -40,3 +40,4 @@ export default class Variable extends Block
         return doc;
     }
 }
+
