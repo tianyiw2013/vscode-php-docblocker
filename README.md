@@ -3,7 +3,7 @@
 [![Latest Release](https://vsmarketplacebadge.apphb.com/version-short/tianyiw.php-docblocker2.svg)](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2)
 [![Installs](https://vsmarketplacebadge.apphb.com/installs/tianyiw.php-docblocker2.svg)](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2)
 [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/tianyiw.php-docblocker2.svg)](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2)
-[![Build status](https://travis-ci.org/tianyiw2013/vscode-php-docblocker.svg?branch=master)](https://travis-ci.org/tianyiw2013/vscode-php-docblocker)
+[![Build status](https://www.travis-ci.com/tianyiw2013/vscode-php-docblocker.svg?branch=master)](https://www.travis-ci.com/tianyiw2013/vscode-php-docblocker)
 [![Coverage status](https://coveralls.io/repos/github/tianyiw2013/vscode-php-docblocker/badge.svg)](https://coveralls.io/github/tianyiw2013/vscode-php-docblocker)
 
 Basic PHP DocBlocking extension.
