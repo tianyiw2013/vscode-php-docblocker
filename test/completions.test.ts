@@ -25,6 +25,7 @@ suite("Completion tests", () => {
             testData.name = testData.key;
         }
         test("Completion: "+ testData.name, () => {
+            Helper.setConfig(testData.config);
             let pos:Position = testPositions[testData.key];
             let result:any = completions.provideCompletionItems(
                 document,
@@ -34,7 +35,7 @@ suite("Completion tests", () => {
 
             let matched:Array<string> = [];
             result.forEach(data => {
-                matched.push(data.label);
+                matched.push(data.insertText.value);
             });
 
             assert.deepEqual(testData.result, matched);

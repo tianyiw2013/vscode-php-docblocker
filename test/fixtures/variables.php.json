@@ -18,6 +18,15 @@
         }
     },
     {
+        "key": "float-with-key",
+        "config": {
+            "variableWithKey": true
+        },
+        "result": {
+            "var": "float $var"
+        }
+    },
+    {
         "key": "int1",
         "config": {
             "variableWithKey": false

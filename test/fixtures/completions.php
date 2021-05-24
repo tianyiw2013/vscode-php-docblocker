@@ -9,6 +9,9 @@
 ////=> package
  * @pack
 
+////=> author
+ * @auth
+
 ////=> var
  * @va
 
@@ -40,3 +43,7 @@
 
 ////=> attribute
 #
+
+////=> var-with-key
+ /**
+ $var = true;

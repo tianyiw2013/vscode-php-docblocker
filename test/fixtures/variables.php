@@ -6,6 +6,9 @@ $var = .3;
 ////=> float2
 $var = 0.3;
 
+////=> float-with-key
+$var = .3;
+
 ////=> int1
 $var = 3;
 
