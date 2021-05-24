@@ -1,7 +1,6 @@
 import * as assert from 'assert';
 import {TextEditor, TextDocument} from 'vscode';
 import Helper from './helpers';
-import Function from '../src/block/property';
 import {Doc, Param} from '../src/doc';
 import Property from '../src/block/property';
 

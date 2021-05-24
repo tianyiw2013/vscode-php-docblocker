@@ -2,7 +2,7 @@ import * as assert from 'assert';
 import {TextEditor, TextDocument} from 'vscode';
 import Helper from './helpers';
 import {Doc, Param} from '../src/doc';
-import Variable from '../src/block/Variable';
+import vars from '../src/block/vars';
 
 suite("Variable tests", () => {
     let editor:TextEditor;
@@ -26,18 +26,18 @@ suite("Variable tests", () => {
         }
         
         test("Match Test: "+ testData.name, () => {
-            let variable = new Variable(testPositions[testData.key], editor);
+            let variable = new vars(testPositions[testData.key], editor);
             assert.equal(variable.test(), true, test.name);
         });
 
         test("Parse Test: "+ testData.name, () => {
-            let variable = new Variable(testPositions[testData.key], editor);
+            let variable = new vars(testPositions[testData.key], editor);
             assert.ok(variable.parse(), test.name);
         });
 
         test("Type Test: "+ testData.name, () => {
             Helper.setConfig(testData.config);
-            let variable = new Variable(testPositions[testData.key], editor);
+            let variable = new vars(testPositions[testData.key], editor);
             let actual:Doc = variable.parse();
             let expected:Doc = new Doc('Undocumented variable');
             if (testData.result.var === undefined) {
