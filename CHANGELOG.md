@@ -2,7 +2,7 @@
 
 All notable changes to the "php-docblocker" extension will be documented in this file.
 
-## [2.1.3] - 2021-05-24
+## [2.1.4] - 2021-05-24
 Patch By [tianyiw](https://github.com/tianyiw2013/vscode-php-docblocker). My English ability is very poor. Please forgive me if I have grammar mistakes.
 #### Added
 - **★ Support for PHP8 union types ★** [neild3r#150](https://github.com/neild3r/vscode-php-docblocker/issues/150)
@@ -134,7 +134,7 @@ Patch By [tianyiw](https://github.com/tianyiw2013/vscode-php-docblocker). My Eng
 - Initial release
 
 [Unreleased]: https://github.com/neild3r/vscode-php-docblocker/compare/v2.1.0...HEAD
-[2.1.3]: https://github.com/tianyiw2013/vscode-php-docblocker/releases/tag/2.1.3
+[2.1.4]: https://github.com/tianyiw2013/vscode-php-docblocker/releases/tag/2.1.4
 [2.1.0]: https://github.com/neild3r/vscode-php-docblocker/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/neild3r/vscode-php-docblocker/compare/v2.0.0...v2.0.1
 [2.0.0]: https://github.com/neild3r/vscode-php-docblocker/compare/v1.9.0...v2.0.0

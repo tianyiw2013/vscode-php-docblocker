@@ -1,10 +1,20 @@
-# PHP DocBlocker
+# PHP DocBlocker2
 
-[![Latest Release](https://vsmarketplacebadge.apphb.com/version-short/neilbrayfield.php-docblocker.svg)](https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker) [![Installs](https://vsmarketplacebadge.apphb.com/installs/neilbrayfield.php-docblocker.svg)](https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker) [![Rating](https://vsmarketplacebadge.apphb.com/rating-short/neilbrayfield.php-docblocker.svg)](https://marketplace.visualstudio.com/items?itemName=neilbrayfield.php-docblocker) [![Build status](https://travis-ci.org/neild3r/vscode-php-docblocker.svg?branch=master)](https://travis-ci.org/neild3r/vscode-php-docblocker) [![Coverage status](https://coveralls.io/repos/github/neild3r/vscode-php-docblocker/badge.svg)](https://coveralls.io/github/neild3r/vscode-php-docblocker)
+[![Latest Release](https://vsmarketplacebadge.apphb.com/version-short/tianyiw.php-docblocker2.svg)](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2)
+[![Installs](https://vsmarketplacebadge.apphb.com/installs/tianyiw.php-docblocker2.svg)](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2)
+[![Rating](https://vsmarketplacebadge.apphb.com/rating-short/tianyiw.php-docblocker2.svg)](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2)
+[![Build status](https://travis-ci.org/tianyiw2013/vscode-php-docblocker.svg?branch=master)](https://travis-ci.org/tianyiw2013/vscode-php-docblocker)
+[![Coverage status](https://coveralls.io/repos/github/tianyiw2013/vscode-php-docblocker/badge.svg)](https://coveralls.io/github/tianyiw2013/vscode-php-docblocker)
 
 Basic PHP DocBlocking extension.
 
 We now have a set of unit tests and some full coverage on the parsing of signatures as well as continuous integration. This should ensure the extension remains stable as development progresses.
+
+## Thanks
+This extension forked from [neild3r/vscode-php-docblocker](https://github.com/neild3r/vscode-php-docblocker).
+Because the original author([neild3r](https://github.com/neild3r)) is not active recently, I decided to continue to maintain the extension and release a new version [2.1.3](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2).
+
+I added some new features to the extension, but my English ability is very poor. Please forgive me if I have grammar mistakes.
 
 ## Features
 
@@ -128,7 +138,7 @@ and can be triggered by typing @ then another characted (Provided your vscode se
 | @abstract                    | @abstract                               |
 | @after                       | @after                                  |
 | @afterClass                  | @afterClass                             |
-| @author                      | @author ${1:{{name}}} <${2:{{email}}}>  |
+| @author                      | @author \${1:name} <${2:email}>  |
 | @backupGlobals               | @backupGlobals ${1:switch}              |
 | @backupStaticAttributes      | @backupStaticAttributes ${1:switch}     |
 | @before                      | @before                                 |
@@ -187,6 +197,6 @@ and can be triggered by typing @ then another characted (Provided your vscode se
 
 ## Future development
 
-It probably wouldn't be too much work to expand this to work with multiple languages. If this is something you are interested in, please pop over to github and add your feedback to the issue [neild3r/vscode-php-docblocker#17](https://github.com/neild3r/vscode-php-docblocker/issues/17).
+It probably wouldn't be too much work to expand this to work with multiple languages. If this is something you are interested in, please pop over to github and add your feedback to the issue [tianyiw2013/vscode-php-docblocker](https://github.com/tianyiw2013/vscode-php-docblocker/issues).
 
 Please also feel free to suggest new configuration options, I appreciate at this time the extension is mostly set up for my own DocBlock style requirements but more options could be added for other use cases.
