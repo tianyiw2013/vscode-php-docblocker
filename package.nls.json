@@ -1,0 +1,12 @@
+{
+    "Insert PHP Docblock": "Insert PHP Docblock",
+    "option.autoIgnorePropertyType": "no `@var` is generated for the property of specified types`",
+    "option.unknownType": "Placeholder of unknown type",
+    "option.defaultMessage": "Document default message",
+    "option.defaultMessage.blank": "blank",
+    "option.defaultMessage.name": "function/class/var name",
+    "option.defaultMessage.undocumented": "e.g. Undocumented function",
+    "option.useShortNames": "Whether you want to use int instead of integer and bool instead of boolean.",
+    "option.variableInline": "If enabled, generated doc in a line. e.g. /** @var mixed */",
+    "option.variableWithKey": "If enabled, generated document will contain a variable name. e.g. @var mixed $name"
+}

@@ -3,39 +3,39 @@
         "key": "public",
         "name": "Public",
         "result": {
-            "var": "[type]"
+            "var": "mixed"
         }
     },
     {
         "key": "protected",
         "name": "Protected",
         "result": {
-            "var": "[type]"
+            "var": "mixed"
         }
     },
     {
         "key": "static",
         "result": {
-            "var": "[type]"
+            "var": "mixed"
         }
     },
     {
         "key": "protected-static",
         "result": {
-            "var": "[type]"
+            "var": "mixed"
         }
     },
     {
         "key": "static-alternate",
         "name": "Static Alternate",
         "result": {
-            "var": "[type]"
+            "var": "mixed"
         }
     },
     {
         "key": "ignore-case",
         "result": {
-            "var": "[type]"
+            "var": "mixed"
         }
     },
     {
@@ -56,14 +56,14 @@
         "key": "default-bool",
         "name": "Default Bool",
         "result": {
-            "var": "boolean"
+            "var": "bool"
         }
     },
     {
         "key": "default-bool-alternate",
         "name": "Default Bool Alternate",
         "result": {
-            "var": "boolean"
+            "var": "bool"
         }
     },
     {
@@ -105,42 +105,57 @@
         "key": "default-int",
         "name": "Default Int",
         "result": {
-            "var": "integer"
+            "var": "int"
         }
     },
     {
         "key": "default-null",
         "name": "Default Null",
         "result": {
-            "var": "[type]"
+            "var": "mixed"
         }
     },
     {
         "key": "specify-type",
+        "config": {
+            "autoIgnorePropertyType": false
+        },
         "result": {
             "var": "array"
         }
     },
     {
         "key": "union-types",
+        "config": {
+            "autoIgnorePropertyType": false
+        },
         "result": {
             "var": "array|string"
         }
     },
     {
         "key": "string-with-null",
+        "config": {
+            "autoIgnorePropertyType": false
+        },
         "result": {
             "var": "string|null"
         }
     },
     {
         "key": "string-default-null",
+        "config": {
+            "autoIgnorePropertyType": false
+        },
         "result": {
             "var": "string|null"
         }
     },
     {
         "key": "syntax-error",
+        "config": {
+            "autoIgnorePropertyType": false
+        },
         "result": {
             "var": "string|null"
         }
@@ -168,7 +183,7 @@
             "autoIgnorePropertyType": true
         },
         "result": {
-            "var": "[type]"
+            "var": "mixed"
         }
     },
     {

@@ -31,15 +31,15 @@
             "params": [
                 {
                     "name": "$arg1",
-                    "type": "[type]"
+                    "type": "mixed"
                 },
                 {
                     "name": "$arg2",
-                    "type": "integer"
+                    "type": "int"
                 },
                 {
                     "name": "$arg3",
-                    "type": "integer|null"
+                    "type": "int|null"
                 }
             ]
         }
@@ -52,11 +52,11 @@
             "params": [
                 {
                     "name": "$arg",
-                    "type": "integer"
+                    "type": "int"
                 },
                 {
                     "name": "$arg1",
-                    "type": "integer"
+                    "type": "int"
                 },
                 {
                     "name": "$arg2",
@@ -119,15 +119,15 @@
             "params": [
                 {
                     "name": "$var",
-                    "type": "[type]"
+                    "type": "mixed"
                 },
                 {
                     "name": "$var2",
-                    "type": "[type]"
+                    "type": "mixed"
                 },
                 {
                     "name": "$var3",
-                    "type": "[type]"
+                    "type": "mixed"
                 }
             ]
         }
@@ -140,7 +140,7 @@
             "params": [
                 {
                     "name": "$var",
-                    "type": "[type]"
+                    "type": "mixed"
                 },
                 {
                     "name": "$var2",
@@ -148,7 +148,7 @@
                 },
                 {
                     "name": "$var3",
-                    "type": "boolean"
+                    "type": "bool"
                 }
             ]
         }
@@ -161,15 +161,15 @@
             "params": [
                 {
                     "name": "$var",
-                    "type": "[type]"
+                    "type": "mixed"
                 },
                 {
                     "name": "$var2",
-                    "type": "[type]"
+                    "type": "mixed"
                 },
                 {
                     "name": "$var3",
-                    "type": "[type]"
+                    "type": "mixed"
                 }
             ]
         }
@@ -186,7 +186,7 @@
                 },
                 {
                     "name": "$var2",
-                    "type": "[type]"
+                    "type": "mixed"
                 },
                 {
                     "name": "$var3",
@@ -236,7 +236,7 @@
                 },
                 {
                     "name": "$boolean",
-                    "type": "boolean"
+                    "type": "bool"
                 },
                 {
                     "name": "$string",
@@ -248,7 +248,7 @@
                 },
                 {
                     "name": "$int",
-                    "type": "integer"
+                    "type": "int"
                 },
                 {
                     "name": "$float",
@@ -278,7 +278,7 @@
 
                 {
                     "name": "$test",
-                    "type": "[type]"
+                    "type": "mixed"
                 }
             ]
         }
@@ -296,7 +296,7 @@
 
                 {
                     "name": "$test",
-                    "type": "[type]"
+                    "type": "mixed"
                 }
             ]
         }
@@ -309,7 +309,7 @@
             "params": [
                 {
                     "name": "$arg",
-                    "type": "integer|null"
+                    "type": "int|null"
                 }
             ]
         }
@@ -335,7 +335,7 @@
             "params": [
                 {
                     "name": "...$args",
-                    "type": "[type]"
+                    "type": "mixed"
                 }
             ]
         }
@@ -364,7 +364,7 @@
             "params": [
                 {
                     "name": "...$args",
-                    "type": "integer"
+                    "type": "int"
                 }
             ]
         }
@@ -416,7 +416,7 @@
         "key": "php8-return-union-types",
         "name": "PHP8 return union types",
         "result": {
-            "return": "integer|boolean|\\TypeHint|App\\Model\\TypeHint",
+            "return": "int|bool|\\TypeHint|App\\Model\\TypeHint",
             "params": []
         }
     },
@@ -482,7 +482,7 @@
             "qualifyClassNames": true
         },
         "result": {
-            "return": "integer",
+            "return": "int",
             "params": [
                 {
                     "name": "$param",
@@ -515,7 +515,7 @@
         "key": "php7-return-multiline-long",
         "name": "PHP7 return type multi-line long from",
         "result": {
-            "return": "integer",
+            "return": "int",
             "params": [
                 {
                     "name": "$param",
@@ -523,7 +523,7 @@
                 },
                 {
                     "name": "$boolean",
-                    "type": "boolean"
+                    "type": "bool"
                 }
             ]
         }
@@ -532,7 +532,7 @@
         "key": "is",
         "name": "Check is prefix",
         "result": {
-            "return": "boolean",
+            "return": "bool",
             "params": []
         }
     },
@@ -548,7 +548,7 @@
         "key": "is-only",
         "name": "Check is prefix - only",
         "result": {
-            "return": "boolean",
+            "return": "bool",
             "params": []
         }
     },
@@ -556,7 +556,7 @@
         "key": "has",
         "name": "Check has prefix",
         "result": {
-            "return": "boolean",
+            "return": "bool",
             "params": []
         }
     },
@@ -572,7 +572,7 @@
         "key": "has-only",
         "name": "Check has prefix - only",
         "result": {
-            "return": "boolean",
+            "return": "bool",
             "params": []
         }
     },
@@ -580,7 +580,7 @@
         "key": "can",
         "name": "Check can prefix",
         "result": {
-            "return": "boolean",
+            "return": "bool",
             "params": []
         }
     },
@@ -596,7 +596,7 @@
         "key": "can-only",
         "name": "Check can prefix - only",
         "result": {
-            "return": "boolean",
+            "return": "bool",
             "params": []
         }
     },
@@ -604,7 +604,7 @@
         "key": "should",
         "name": "Check should prefix",
         "result": {
-            "return": "boolean",
+            "return": "bool",
             "params": []
         }
     },
@@ -620,7 +620,7 @@
         "key": "should-only",
         "name": "Check should prefix - only",
         "result": {
-            "return": "boolean",
+            "return": "bool",
             "params": []
         }
     },
@@ -652,11 +652,11 @@
         "key": "isset",
         "name": "isset return type",
         "result": {
-            "return": "boolean",
+            "return": "bool",
             "params": [
                 {
                     "name": "$name",
-                    "type": "[type]"
+                    "type": "mixed"
                 }
             ]
         }
@@ -677,11 +677,11 @@
             "params": [
                 {
                     "name": "$name",
-                    "type": "[type]"
+                    "type": "mixed"
                 },
                 {
                     "name": "$value",
-                    "type": "[type]"
+                    "type": "mixed"
                 }
             ]
         }
@@ -694,7 +694,7 @@
             "params": [
                 {
                     "name": "$name",
-                    "type": "[type]"
+                    "type": "mixed"
                 }
             ]
         }

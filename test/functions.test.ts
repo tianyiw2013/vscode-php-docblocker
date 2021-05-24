@@ -41,6 +41,7 @@ suite("Function tests", () => {
             let func = new Function(testPositions[testData.key], editor);
             let actual:Doc = func.parse();
             let expected:Doc = new Doc('Undocumented function');
+            expected.fromObject(actual);
             expected.fromObject(testData.result);
             expected.template = Helper.getConfig().get('functionTemplate');
             assert.deepEqual(actual, expected);

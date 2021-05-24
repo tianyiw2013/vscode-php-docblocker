@@ -81,6 +81,7 @@ export class Doc
             this.inline = input.inline;
         }
         if (input.params !== undefined && Array.isArray(input.params)) {
+            this.params.length = 0;
             input.params.forEach(param => {
                 this.params.push(new Param(param.type, param.name));
             });

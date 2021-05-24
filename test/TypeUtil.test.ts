@@ -49,11 +49,13 @@ suite("TypeUtil tests: ", () => {
 
     test("With default settings the integer type formatted is integer", () => {
         let type = new TypeUtil;
+        Helper.setConfig({useShortNames: false});
         assert.equal(type.getFormattedTypeByName('int'), 'integer');
     });
 
     test("With default settings the boolean type formatted is boolean", () => {
         let type = new TypeUtil;
+        Helper.setConfig({useShortNames: false});
         assert.equal(type.getFormattedTypeByName('bool'), 'boolean');
     });
 

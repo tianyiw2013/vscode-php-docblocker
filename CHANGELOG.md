@@ -1,6 +1,19 @@
 # Change Log
 
 All notable changes to the "php-docblocker" extension will be documented in this file.
+## [2.1.5] - 2021-05-24
+#### Changed
+- Modify the default value of the option to make it more suitable for modern PHP.
+  - `autoIgnorePropertyType` : `true`
+  - `unknownType` : `mixed`
+  - `defaultMessage` : `name`
+  - `useShortNames` : `true`
+  - `variableInline` : `true`
+  - `variableWithKey` : `true`
+### Added
+- localization
+  - The default language is English
+  - 默认语言为英语，增加简体中文（仅新特性）
 
 ## [2.1.4] - 2021-05-24
 Patch By [tianyiw](https://github.com/tianyiw2013/vscode-php-docblocker). My English ability is very poor. Please forgive me if I have grammar mistakes.
@@ -134,6 +147,7 @@ Patch By [tianyiw](https://github.com/tianyiw2013/vscode-php-docblocker). My Eng
 - Initial release
 
 [Unreleased]: https://github.com/neild3r/vscode-php-docblocker/compare/v2.1.0...HEAD
+[2.1.5]: https://github.com/tianyiw2013/vscode-php-docblocker/releases/tag/2.1.5
 [2.1.4]: https://github.com/tianyiw2013/vscode-php-docblocker/releases/tag/2.1.4
 [2.1.0]: https://github.com/neild3r/vscode-php-docblocker/compare/v2.0.1...v2.1.0
 [2.0.1]: https://github.com/neild3r/vscode-php-docblocker/compare/v2.0.0...v2.0.1

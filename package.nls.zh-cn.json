@@ -1,0 +1,12 @@
+{
+    "Insert PHP Docblock": "插入PHP文档块",
+    "option.autoIgnorePropertyType": "若属性已指定类型，则文档中不生成`@var`",
+    "option.unknownType": "未知类型的默认类型",
+    "option.defaultMessage": "文档默认信息",
+    "option.defaultMessage.blank": "空白",
+    "option.defaultMessage.name": "使用方法或变量名",
+    "option.defaultMessage.undocumented": "如 Undocumented function",
+    "option.useShortNames": "使用`int`和`bool`代替`integer`和`boolean`",
+    "option.variableInline": "生成单行文档。如 /** @var mixed */",
+    "option.variableWithKey": "生成文档中包含变量名。如 @var mixed $name"
+}
