@@ -6,7 +6,7 @@ import TypeUtil from "../util/TypeUtil";
 /**
  * Represents an var block
  */
-export default class Variable extends Block
+export default class variable extends Block
 {
 
     /**
