@@ -12,7 +12,7 @@ We now have a set of unit tests and some full coverage on the parsing of signatu
 
 ## Thanks
 This extension forked from [neild3r/vscode-php-docblocker](https://github.com/neild3r/vscode-php-docblocker).
-Because the original author([neild3r](https://github.com/neild3r)) is not active recently, I decided to continue to maintain the extension and release a new version [2.1.3](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2).
+Because the original author([neild3r](https://github.com/neild3r)) is not active recently, I decided to continue to maintain the extension and release a new version [2.1.4](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2).
 
 I added some new features to the extension, but my English ability is very poor. Please forgive me if I have grammar mistakes.
 
