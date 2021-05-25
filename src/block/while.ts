@@ -1,12 +1,10 @@
-import { Block } from "../block";
 import { Doc, Param } from "../doc";
-import Config from "../util/config";
-import TypeUtil from "../util/TypeUtil";
+import Variable from "./variable";
 
 /**
  * Represents an var block for `while`
  */
-export default class While extends Block
+export default class While extends Variable
 {
 
     /**
@@ -20,21 +18,7 @@ export default class While extends Block
     public parse():Doc
     {
         let params = this.match();
-        
-        let doc = new Doc(TypeUtil.instance.getDefaultMessage(String(params[1]).substr(1), 'variable'));
-        doc.template = Config.instance.get('variableTemplate');
-
-        doc.var = TypeUtil.instance.getUnknownType();
-        if (Config.instance.get('variableWithKey')) {
-            doc.var += ' ' + params[1];
-        }
-
-        doc.inline = Config.instance.get('variableInline');
-        if (doc.inline) {
-            doc.message = '';
-        }
-
-        return doc;
+        return this.parseVar(params[1]);
     }
 }
 

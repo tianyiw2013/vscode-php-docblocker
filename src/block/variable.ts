@@ -20,16 +20,28 @@ export default class Variable extends Block
     public parse():Doc
     {
         let params = this.match();
-        let doc = new Doc(TypeUtil.instance.getDefaultMessage(String(params[1]).substr(1), 'variable'));
+        return this.parseVar(params[1], params[2]);
+    }
+    
+    /**
+     * parse
+     * 
+     * @param key e.g.`$key`
+     * @param value
+     * @returns 
+     */
+    protected parseVar(key:string, value:any=undefined):Doc
+    {
+        let doc = new Doc(TypeUtil.instance.getDefaultMessage(String(key).substr(1), 'variable'));
         doc.template = Config.instance.get('variableTemplate');
 
-        if (params[2]) {
-            doc.var = this.getTypeFromValue(params[2]);
+        if (value) {
+            doc.var = this.getTypeFromValue(value);
         } else {
             doc.var = TypeUtil.instance.getUnknownType();
         }
         if (Config.instance.get('variableWithKey')) {
-            doc.var += ' ' + params[1];
+            doc.var += ' ' + key;
         }
 
         doc.inline = Config.instance.get('variableInline');
