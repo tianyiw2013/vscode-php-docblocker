@@ -12,7 +12,7 @@ export default class While extends Block
     /**
      * @inheritdoc
      */
-    protected pattern:RegExp = /^\s*while\s*\((\$[a-z_][a-z0-9_]*)\s*=(?!=)/im;
+    protected pattern:RegExp = /^\s*while\s*\((\$[a-z0-9_]+)\s*=(?!=)/im;
 
     /**
      * @inheritdoc
