@@ -1,6 +1,22 @@
 # Change Log
 
 All notable changes to the "php-docblocker" extension will be documented in this file.
+## [2.1.7] - 2021-05-25
+### Added
+- Support for `foreach(...as $value)` with variable docblock
+```php
+/** @var mixed $value  */
+foreach ([] as $value) {}
+
+/** @var mixed $value  */
+foreach ([] as $key => $value) {}
+```
+- Support for `while($value=...)` with variable docblock
+```php
+/** @var mixed $value  */
+while ($value = array_pop($arrs)) {}
+```
+
 ## [2.1.6] - 2021-05-24
 #### Changed
 - Modify the default value of the option to make it more suitable for modern PHP.
@@ -147,6 +163,7 @@ Patch By [tianyiw](https://github.com/tianyiw2013/vscode-php-docblocker). My Eng
 - Initial release
 
 [Unreleased]: https://github.com/neild3r/vscode-php-docblocker/compare/v2.1.0...HEAD
+[2.1.7]: https://github.com/tianyiw2013/vscode-php-docblocker/releases/tag/2.1.7
 [2.1.6]: https://github.com/tianyiw2013/vscode-php-docblocker/releases/tag/2.1.6
 [2.1.4]: https://github.com/tianyiw2013/vscode-php-docblocker/releases/tag/2.1.4
 [2.1.0]: https://github.com/neild3r/vscode-php-docblocker/compare/v2.0.1...v2.1.0

@@ -4,6 +4,8 @@ import Property from "./block/property";
 import Class from "./block/class";
 import {Doc, Param} from "./doc";
 import Variable from "./block/variable";
+import Foreach from "./block/foreach";
+import While from "./block/while";
 
 /**
  * Check which type of docblock we need and instruct the components to build the
@@ -63,6 +65,16 @@ export default class Documenter
         let variable = new Variable(this.targetPosition, this.editor);
         if (variable.test()) {
             return variable.parse().build();
+        }
+
+        let foreach = new Foreach(this.targetPosition, this.editor);
+        if (foreach.test()) {
+            return foreach.parse().build();
+        }
+
+        let while_ = new While(this.targetPosition, this.editor);
+        if (while_.test()) {
+            return while_.parse().build();
         }
 
         return new Doc().build(true);

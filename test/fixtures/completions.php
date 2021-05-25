@@ -47,3 +47,19 @@
 ////=> var-with-key
  /**
  $var = true;
+
+////=> foreach
+ /**
+ foreach ([] as $key => $value) {
+
+////=> foreach-with-key
+ /**
+  foreach ([] as $value) {
+
+////=> while
+ /**
+  while ($value = array_shift($arrs)) {
+
+////=> while-no
+ /**
+  while ($value == true) {
