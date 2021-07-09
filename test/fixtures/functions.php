@@ -305,4 +305,9 @@ abstract class Test
     public function default_message_undocumented()
     {
     }
+
+    ////=> return-type-with-spaces
+    function return_type_with_spaces(): int| bool |  string
+    {
+    }
 }

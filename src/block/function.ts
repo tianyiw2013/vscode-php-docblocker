@@ -74,9 +74,11 @@ export default class FunctionBlock extends Block
             }
         }
 
-        let returnType:Array<string> = this.signature.match(/.*\)\s*\:\s*(\?)?\s*([a-zA-Z_0-9\|\\]+)\s*$/m);
+        let returnType:Array<string> = this.signature.match(/.*\)\s*\:\s*(\?)?\s*([a-zA-Z_0-9\|\\\s]+)\s*$/m);
 
         if (returnType != null) {
+            returnType[2] = returnType[2].replace(/\s/g, '');
+
             if (Config.instance.get('qualifyClassNames')) {
                 returnType[2] = TypeUtil.instance.getFullyQualifiedType(returnType[2], this.getClassHead());
             }

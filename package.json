@@ -2,7 +2,7 @@
   "name": "php-docblocker2",
   "displayName": "PHP DocBlocker2",
   "description": "A simple, dependency free PHP specific DocBlocking package",
-  "version": "2.1.7",
+  "version": "2.1.8",
   "license": "MIT",
   "publisher": "tianyiw",
   "author": "tianyiw <tianyiw@vip.qq.com> & Neil Brayfield <dev@brayfield.uk>",
@@ -55,6 +55,11 @@
             "mixed"
           ],
           "description": "%option.unknownType%"
+        },
+        "php-docblocker2.defaultParameterDescription": {
+          "type": "boolean",
+          "default": false,
+          "description": "%option.defaultParameterDescription%"
         },
         "php-docblocker2.defaultMessage": {
           "type": "string",

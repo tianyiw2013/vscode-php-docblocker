@@ -61,8 +61,8 @@
             "/**",
             " * ${1:Undocumented function}",
             " *",
-            " * @param ${2:int} \\$name",
-            " * @return ${3:void}",
+            " * @param ${2:int} \\$name ${3:}",
+            " * @return ${4:void}",
             " */"
         ]
     },
@@ -90,9 +90,40 @@
             "/**",
             " * ${1:Undocumented function}",
             " *",
-            " * @param ${2:int} \\$name",
-            " * @param ${3:string} \\$message",
-            " * @return ${4:void}",
+            " * @param ${2:int} \\$name ${3:}",
+            " * @param ${4:string} \\$message ${5:}",
+            " * @return ${6:void}",
+            " */"
+        ]
+    },
+    {
+        "name": "Function multiple params AND use name as description",
+        "config": {
+            "gap": true,
+            "defaultParameterDescription": true,
+            "extra": []
+        },
+        "input": {
+            "message": "Undocumented function",
+            "return": "void",
+            "params": [
+                {
+                    "name": "$name",
+                    "type": "int"
+                },
+                {
+                    "name": "$message",
+                    "type": "string"
+                }
+            ]
+        },
+        "expected": [
+            "/**",
+            " * ${1:Undocumented function}",
+            " *",
+            " * @param ${2:int} \\$name ${3:name}",
+            " * @param ${4:string} \\$message ${5:message}",
+            " * @return ${6:void}",
             " */"
         ]
     },
@@ -136,7 +167,7 @@
             "/**",
             " * ${1:Undocumented function}",
             " *",
-            " * @param ${2:int} \\$name",
+            " * @param ${2:int} \\$name ${3:}",
             " * @author John Smith <john@smith.com>",
             " */"
         ]
@@ -159,7 +190,7 @@
         "expected": [
             "/**",
             " * ${1:Undocumented function}",
-            " * @param ${2:int} \\$name",
+            " * @param ${2:int} \\$name ${3:}",
             " */"
         ]
     },
@@ -185,7 +216,7 @@
             "/**",
             " * ${1:Undocumented function}",
             " *",
-            " * @param ${2:int} \\$name",
+            " * @param ${2:int} \\$name ${3:}",
             " *",
             " * @author John Smith <john@smith.com>",
             " */"
@@ -211,9 +242,9 @@
             "/**",
             " * ${1:Undocumented function}",
             " *",
-            " * @param ${2:int} \\$name",
+            " * @param ${2:int} \\$name ${3:}",
             " *",
-            " * @return ${3:void}",
+            " * @return ${4:void}",
             " */"
         ]
     },
@@ -252,7 +283,7 @@
             "/**",
             " * ${1:Undocumented function}",
             " *",
-            " * @param ${2:int} \\$name",
+            " * @param ${2:int} \\$name ${3:}",
             " */"
         ]
     },
@@ -287,7 +318,7 @@
             " *",
             " * @author Neil Brayfield <neil@test.com>",
             " *",
-            " * @param ${2:int} \\$name",
+            " * @param ${2:int} \\$name ${3:}",
             " */"
         ]
     },
@@ -322,7 +353,7 @@
             " *",
             " * @author ${2:Neil Brayfield} <${3:neil@test.com}>",
             " *",
-            " * @param ${4:int} \\$name",
+            " * @param ${4:int} \\$name ${5:}",
             " */"
         ]
     }

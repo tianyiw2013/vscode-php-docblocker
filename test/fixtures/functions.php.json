@@ -728,5 +728,15 @@
             "return": "void",
             "message": "Undocumented function"
         }
+    },
+    {
+        "key": "return-type-with-spaces",
+        "config": {
+            "useShortNames": true
+        },
+        "result": {
+            "return": "int|bool|string",
+            "params": []
+        }
     }
 ]

@@ -121,6 +121,11 @@ export class Doc
                     paramString += "\n";
                 }
                 paramString += "@param \${###:"+param.type+"} " + param.name.replace('$', '\\$');
+                if (Config.instance.get('defaultParameterDescription')) {
+                    paramString += " \${###:"+param.name.substr(1)+"}";
+                }else{
+                    paramString += " \${###:}";
+                }
             });
         }
 

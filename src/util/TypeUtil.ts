@@ -118,6 +118,7 @@ export default class TypeUtil {
     public getDefaultMessage(name:string, type:string): string {
         switch (Config.instance.get('defaultMessage')) {
             case 'name':
+                name = name.replace(/^_+/g, '');
                 return name;
             case 'blank':
                 return '';
