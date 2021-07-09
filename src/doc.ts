@@ -111,6 +111,9 @@ export class Doc
             gap = true;
             extra = [];
         }
+        if (!extra) {
+            extra = [];
+        }
 
         messageString = "\${###" + (this.message != "" ? ':' : '') + this.message + "}";
 
@@ -144,10 +147,25 @@ export class Doc
             returnString = "@return \${###:" +this.return + "}";
         }
 
-        if (Array.isArray(extra) && extra.length > 0) {
-            extraString = extra.join("\n");
-        }
-
+        let extraStrings = [];
+        extra.forEach(v => {
+            if (v instanceof Object) {
+                if (v.before || v.after) {
+                    return;
+                }
+                let content = v.content;
+                if (content && v.gapBefore) {
+                    extraStrings.push("");
+                }
+                extraStrings.push(content);
+                if (content && v.gapAfter) {
+                    extraStrings.push("");
+                }
+            } else {
+                extraStrings.push(v);
+            }
+        });
+        extraString = extraStrings.join("\n");
 
         let templateArray = [];
         for (let key in this.template) {
@@ -172,6 +190,19 @@ export class Doc
             } else if (propConfig.content !== undefined) {
                 propString = propConfig.content;
             }
+                
+            extra.forEach(v => {
+                if (v instanceof Object && v.before === key) {
+                    let content = v.content;
+                    if (content && v.gapBefore) {
+                        templateArray.push("");
+                    }
+                    templateArray.push(content);
+                    if (content && v.gapAfter) {
+                        templateArray.push("");
+                    }
+                }
+            });
 
             if (propString && propConfig.gapBefore && templateArray[templateArray.length - 1] != "") {
                 templateArray.push("");
@@ -184,6 +215,19 @@ export class Doc
             if (propString && propConfig.gapAfter) {
                 templateArray.push("");
             }
+                
+            extra.forEach(v => {
+                if (v instanceof Object && v.after === key) {
+                    let content = v.content;
+                    if (content && v.gapBefore) {
+                        templateArray.push("");
+                    }
+                    templateArray.push(content);
+                    if (content && v.gapAfter) {
+                        templateArray.push("");
+                    }
+                }
+            });
         }
 
         if (templateArray[templateArray.length - 1] == "") {

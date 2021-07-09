@@ -2,12 +2,62 @@
 
 All notable changes to the "php-docblocker2" extension will be documented in this file.
 
+- **☆ My English is so poor, the following content is for reference only, thank you.**
+- **☆ There are no instructions for many features at present. I will add instructions in my spare time in the future.**
+
+## [2.1.9] - 2021-07-25
+### Added
+#### You can insert any content by setting `php-docblocker2.extra`. The effect is as follows: (通过设置项`php-docblocker2.extra`实现任意插入内容，效果如下所示：)
+
+```json
+// settings.json
+"php-docblocker2.extra": [
+    {
+        "content": "@since ${###:1.0.0}",
+        "before": "param",
+        "gapAfter": true,
+    },
+    {
+        "before": "return",
+        "gapAfter": true,
+    },
+    {
+        "content": "@see http://php.cn",
+        "gapBefore": true,
+        "gapAfter": true,
+    },
+    "hello world",
+],
+```
+
+```php
+// test.php
+/**
+ * likethis
+ *
+ * @since 1.0.0
+ *
+ * @param string $username 
+ * @param string $password 
+ * @param string|null $confirm_password 
+ *
+ * @return bool
+ *
+ * @see http://php.cn
+ *
+ * hello world
+ */
+function likethis(string $username, string $password, string $confirm_password = null): bool
+{
+}
+```
 
 ## [2.1.8] - 2021-07-25
 ### Added
 - Add a setting `defaultParameterDescription`(增加设置项：默认参数描述) [#9](https://github.com/tianyiw2013/vscode-php-docblocker/issues/9)
   - `false (default value)` A blank placeholder, you can tab to the placeholder to complete the description. (默认为false，使用空白占位符，你可以通过Tab键定位到占位符手工输入参数描述)
   - `true` Use the parameter name as the description. (设为true后，将使用参数名作为参数描述)
+  
   ```php
   /**
    * likethis

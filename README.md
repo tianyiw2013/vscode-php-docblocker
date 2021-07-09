@@ -16,6 +16,8 @@ Because the original author([neild3r](https://github.com/neild3r)) is not active
 
 I added some new features to the extension, but my English ability is very poor. Please forgive me if I have grammar mistakes.
 
+**☆ There are no instructions for many features at present. I will add instructions in my spare time in the future.**
+
 ## Features
 
 * Completion snippet after `/**` above a class, function, class property

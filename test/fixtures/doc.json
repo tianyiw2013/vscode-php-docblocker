@@ -356,5 +356,52 @@
             " * @param ${4:int} \\$name ${5:}",
             " */"
         ]
+    },
+    {
+        "name": "php-docblocker2.extra",
+        "config": {
+            "extra": [
+                {
+                    "content": "@since ${###:1.0.0}",
+                    "before": "param",
+                    "gapAfter": true
+                },
+                {
+                    "before": "return",
+                    "gapAfter": true
+                },
+                {
+                    "content": "@see http://php.cn",
+                    "gapBefore": true,
+                    "gapAfter": true
+                },
+                "hello world"
+            ]
+        },
+        "input": {
+            "message": "Undocumented function",
+            "return": "void",
+            "params": [
+                {
+                    "name": "$name",
+                    "type": "int"
+                }
+            ]
+        },
+        "expected": [
+            "/**",
+            " * ${1:Undocumented function}",
+            " *",
+            " * @since ${2:1.0.0}",
+            " *",
+            " * @param ${3:int} \\$name ${4:}",
+            " *",
+            " * @return ${5:void}",
+            " *",
+            " * @see http://php.cn",
+            " *",
+            " * hello world",
+            " */"
+        ]
     }
 ]
