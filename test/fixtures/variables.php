@@ -99,5 +99,5 @@ $inline = 1;
 ////=> inline-with-extra
 $inline = 1;
 
-////=> inline-with-key-extra
+////=> inline-with-key-and-extra
 $inline = 1;

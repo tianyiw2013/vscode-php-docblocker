@@ -1,3 +1,4 @@
+import { isArray, isObject, isString } from 'util';
 import {workspace, SnippetString, WorkspaceConfiguration} from 'vscode';
 import Config from './util/config';
 
@@ -9,12 +10,29 @@ import Config from './util/config';
  */
 export class Doc
 {
+    static readonly TYPE_EMPTY = "empty";
+
+    static readonly TYPE_CLASS = "class";
+
+    static readonly TYPE_FUNCTION = "function";
+
+    static readonly TYPE_PROPERTY = "property";
+
+    static readonly TYPE_VARIABLE = "variable";
+    
     /**
      * List of param tags
      *
      * @type {Array<Param>}
      */
     public params:Array<Param> = [];
+
+    /**
+     * Doc type
+     *
+     * @type {string}
+     */
+    public type:string;
 
     /**
      * Return tag
@@ -56,8 +74,9 @@ export class Doc
      *
      * @param {string} [message='']
      */
-    public constructor(message:string = '')
+    public constructor(type:string, message:string = '')
     {
+        this.type = type;
         this.message = message;
     }
 
@@ -96,8 +115,47 @@ export class Doc
      */
     public build(isEmpty:boolean = false):SnippetString
     {
+        let _extra = Config.instance.get('extra');
+        let extra = [];
+        if (_extra && _extra !== []) {
+            _extra.forEach((v, i) => {
+                if (!isObject(v)) {
+                    v = _extra[i] = {
+                        content: v,
+                    };
+                }
+                if(isString(v.scope)){
+                    v.scope = v.scope.replace('/\s*/','').split(/[,\|]/);
+                }
+                if(v.scope === [] || !isArray(v.scope)){
+                    v.scope = [Doc.TYPE_CLASS, Doc.TYPE_FUNCTION, Doc.TYPE_PROPERTY];
+                }else{
+                    let scope = [];
+                    v.scope.forEach(vv => {
+                        switch (vv) {
+                            case 'func':
+                                vv = Doc.TYPE_FUNCTION;
+                                break;
+                            case 'prop':
+                                vv = Doc.TYPE_PROPERTY;
+                                break;
+                            case 'var':
+                                vv = Doc.TYPE_VARIABLE;
+                                break;
+                            default:
+                                break;
+                        }
+                        scope.push(vv);
+                    });
+                    v.scope = scope;
+                }
+                if (v.scope.indexOf(this.type) === -1) {
+                    return;
+                }
+                extra.push(v);
+            });
+        }
 
-        let extra = Config.instance.get('extra');
         let gap = Config.instance.get('gap');
         let returnGap = Config.instance.get('returnGap');
 
@@ -109,9 +167,6 @@ export class Doc
 
         if (isEmpty) {
             gap = true;
-            extra = [];
-        }
-        if (!extra) {
             extra = [];
         }
 
@@ -149,20 +204,16 @@ export class Doc
 
         let extraStrings = [];
         extra.forEach(v => {
-            if (v instanceof Object) {
-                if (v.before || v.after) {
-                    return;
-                }
-                let content = v.content;
-                if (content && v.gapBefore) {
-                    extraStrings.push("");
-                }
-                extraStrings.push(content);
-                if (content && v.gapAfter) {
-                    extraStrings.push("");
-                }
-            } else {
-                extraStrings.push(v);
+            if (v.before || v.after) {
+                return;
+            }
+            let content = v.content;
+            if (content && v.gapBefore) {
+                extraStrings.push("");
+            }
+            extraStrings.push(content);
+            if (content && v.gapAfter) {
+                extraStrings.push("");
             }
         });
         extraString = extraStrings.join("\n");
@@ -192,7 +243,7 @@ export class Doc
             }
                 
             extra.forEach(v => {
-                if (v instanceof Object && v.before === key) {
+                if (v.before === key) {
                     let content = v.content;
                     if (content && v.gapBefore) {
                         templateArray.push("");
@@ -217,7 +268,7 @@ export class Doc
             }
                 
             extra.forEach(v => {
-                if (v instanceof Object && v.after === key) {
+                if (v.after === key) {
                     let content = v.content;
                     if (content && v.gapBefore) {
                         templateArray.push("");
@@ -237,6 +288,7 @@ export class Doc
         let templateString:string;
 
         if (this.inline && templateArray.length === 3) {
+            templateArray[0] = '\${###}';
             templateString = "/** " + templateArray[2] + " " + templateArray[0] + " */";
         } else {
             templateString = templateArray.join("\n");

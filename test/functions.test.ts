@@ -40,7 +40,7 @@ suite("Function tests", () => {
             Helper.setConfig(testData.config);
             let func = new Function(testPositions[testData.key], editor);
             let actual:Doc = func.parse();
-            let expected:Doc = new Doc('Undocumented function');
+            let expected:Doc = new Doc(Doc.TYPE_FUNCTION, 'Undocumented function');
             expected.fromObject(actual);
             expected.fromObject(testData.result);
             expected.template = Helper.getConfig().get('functionTemplate');

@@ -12,7 +12,10 @@ suite("Snippet build tests", () => {
             testData.name = testData.key;
         }
         test("Snippet test: "+ testData.name, () => {
-            let doc = new Doc();
+            if (!testData.type) {
+                testData.type = Doc.TYPE_EMPTY;
+            }
+            let doc = new Doc(testData.type);
             let empty = false;
             if (testData.config != undefined) {
                 Helper.setConfig(testData.config);

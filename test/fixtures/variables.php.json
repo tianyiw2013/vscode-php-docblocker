@@ -262,7 +262,7 @@
         },
         "result": {
             "inline": true,
-            "message": "",
+            "message": "inline",
             "var": "int"
         },
         "doc": "/** @var ${1:int} ${2} */"
@@ -275,7 +275,7 @@
         },
         "result": {
             "inline": true,
-            "message": "",
+            "message": "inline",
             "var": "int $inline"
         },
         "doc": "/** @var ${1:int} ${2:\\$inline} ${3} */"
@@ -289,28 +289,34 @@
                 {
                     "content": "@since ${###:1.0.0}",
                     "after": "message",
-                    "gapAfter": true
+                    "gapAfter": true,
+                    "scope": "var"
                 },
                 {
                     "before": "return",
-                    "gapAfter": true
+                    "gapAfter": true,
+                    "scope": "var|func"
                 },
                 {
                     "content": "@see http://php.cn",
                     "gapBefore": true,
-                    "gapAfter": true
+                    "gapAfter": true,
+                    "scope": "var,class"
                 },
-                "hello world"
+                {
+                    "content": "hello world",
+                    "scope": ["var"]
+                }
             ]
         },
         "result": {
             "inline": true,
-            "message": "",
+            "message": "inline",
             "var": "int"
         },
         "doc": [
             "/**",
-            " * ${1}",
+            " * ${1:inline}",
             " *",
             " * @since ${2:1.0.0}",
             " *",
@@ -324,7 +330,7 @@
         ]
     },
     {
-        "key": "inline-with-key-extra",
+        "key": "inline-with-key-and-extra",
         "config": {
             "variableInline": true,
             "variableWithKey": true,
@@ -332,28 +338,35 @@
                 {
                     "content": "@since ${###:1.0.0}",
                     "after": "message",
-                    "gapAfter": true
+                    "gapAfter": true,
+                    "scope": "var"
                 },
                 {
                     "before": "return",
-                    "gapAfter": true
+                    "gapAfter": true,
+                    "scope": "var|func"
                 },
                 {
                     "content": "@see http://php.cn",
                     "gapBefore": true,
-                    "gapAfter": true
+                    "gapAfter": true,
+                    "scope": "var,class"
                 },
-                "hello world"
+                {
+                    "content": "hello world",
+                    "scope": ["var", "prop"]
+                },
+                "no_scope"
             ]
         },
         "result": {
             "inline": true,
-            "message": "",
+            "message": "inline",
             "var": "int $inline"
         },
         "doc": [
             "/**",
-            " * ${1}",
+            " * ${1:inline}",
             " *",
             " * @since ${2:1.0.0}",
             " *",

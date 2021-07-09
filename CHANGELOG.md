@@ -5,6 +5,81 @@ All notable changes to the "php-docblocker2" extension will be documented in thi
 - **☆ My English is so poor, the following content is for reference only, thank you.**
 - **☆ There are no instructions for many features at present. I will add instructions in my spare time in the future.**
 
+## [2.1.10] - 2021-07-25
+### Added
+#### `php-docblocker2.extra` add `scope`
+```json
+// settings.json
+"php-docblocker2.extra": [
+    {
+        "content": "@since ${###:1.0.0}",
+        "after": "message",
+        "gapAfter": true,
+        "scope": ["function", "class", "property"]
+    },
+    {
+        "content": "hello world",
+        "scope": "variable",
+    },
+    {
+        "content": "good morning",
+        "scope": "empty",
+    },
+    {
+        "content": "how are you",
+        "scope": "func,class",
+    },
+    {
+        "content": "I am fine",
+        "scope": "var,prop",
+    },
+],
+```
+
+```php
+<?php
+/**
+ * MyClass
+ *
+ * @since 1.0.0
+ *
+ * how are you
+ */
+class MyClass
+{
+    /**
+     * name
+     *
+     * @since 1.0.0
+     *
+     * @var mixed
+     * I am fine
+     */
+    protected $name;
+    
+    /**
+     * myFunc
+     *
+     * @since 1.0.0
+     *
+     * @return void
+     * how are you
+     */
+    function myFunc()
+    {
+    }
+}
+
+/**
+ * myclass
+ *
+ * @var MyClass $myclass
+ * hello world
+ * I am fine
+ */
+$myclass = new MyClass;
+```
+
 ## [2.1.9] - 2021-07-25
 ### Added
 #### You can insert any content by setting `php-docblocker2.extra`. The effect is as follows: (通过设置项`php-docblocker2.extra`实现任意插入内容，效果如下所示：)
@@ -31,6 +106,7 @@ All notable changes to the "php-docblocker2" extension will be documented in thi
 ```
 
 ```php
+<?php
 // test.php
 /**
  * likethis
@@ -59,6 +135,7 @@ function likethis(string $username, string $password, string $confirm_password =
   - `true` Use the parameter name as the description. (设为true后，将使用参数名作为参数描述)
   
   ```php
+  <?php
   /**
    * likethis
    *
@@ -73,6 +150,7 @@ function likethis(string $username, string $password, string $confirm_password =
 ### Fixed
 - Failed to detect return type when return type contains spaces (返回类型含有空格导致返回值类型识别错误) [#10](https://github.com/tianyiw2013/vscode-php-docblocker/issues/10)
 ```php
+<?php
 /**
  * likethis
  *
@@ -87,6 +165,7 @@ function likethis(): bool | int
 ### Added
 #### Support for `foreach(...as $value)` with variable docblock
 ```php
+<?php
 /** @var mixed $value  */
 foreach ([] as $value) {}
 
@@ -95,6 +174,7 @@ foreach ([] as $key => $value) {}
 ```
 #### Support for `while($value=...)` with variable docblock
 ```php
+<?php
 /** @var mixed $value  */
 while ($value = array_pop($arrs)) {}
 ```

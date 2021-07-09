@@ -39,7 +39,7 @@ suite("Class tests", () => {
                 Helper.setConfig(testData.config);
                 let prop = new Class(testPositions[testData.key], editor);
                 let actual:Doc = prop.parse();
-                let expected:Doc = new Doc('Undocumented class');
+                let expected:Doc = new Doc(Doc.TYPE_CLASS, 'Undocumented class');
                 expected.fromObject(testData.result);
                 expected.template = Helper.getConfig().get('classTemplate');
                 assert.deepEqual(actual, expected);

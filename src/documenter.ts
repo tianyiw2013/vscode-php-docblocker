@@ -77,6 +77,6 @@ export default class Documenter
             return while_.parse().build();
         }
 
-        return new Doc().build(true);
+        return new Doc(Doc.TYPE_EMPTY).build(true);
     }
 }

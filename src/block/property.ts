@@ -26,7 +26,7 @@ export default class Property extends Block
             type = false;
         }
 
-        let doc = new Doc(TypeUtil.instance.getDefaultMessage(String(params[3]).substr(1), 'property'));
+        let doc = new Doc(Doc.TYPE_PROPERTY, TypeUtil.instance.getDefaultMessage(String(params[3]).substr(1), 'property'));
         doc.template = Config.instance.get('propertyTemplate');
 
         if (type) {

@@ -24,7 +24,7 @@ export default class FunctionBlock extends Block
     public parse():Doc
     {
         let params = this.match();
-        let doc = new Doc(TypeUtil.instance.getDefaultMessage(params[5], 'function'));
+        let doc = new Doc(Doc.TYPE_FUNCTION, TypeUtil.instance.getDefaultMessage(params[5], 'function'));
         doc.template = Config.instance.get('functionTemplate');
         let argString = this.getEnclosed(params[6], "(", ")");
         let head:string;

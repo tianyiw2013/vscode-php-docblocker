@@ -39,7 +39,7 @@ suite("Property tests", () => {
             Helper.setConfig(testData.config);
             let prop = new Property(testPositions[testData.key], editor);
             let actual:Doc = prop.parse();
-            let expected:Doc = new Doc('Undocumented property');
+            let expected:Doc = new Doc(Doc.TYPE_PROPERTY, 'Undocumented property');
             if (testData.result.var ===undefined) {
                 expected.var = undefined;
             }

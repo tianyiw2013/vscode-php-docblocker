@@ -129,6 +129,7 @@
     },
     {
         "name": "Extra",
+        "type": "function",
         "config": {
             "gap": true,
             "extra": [
@@ -148,6 +149,7 @@
     },
     {
         "name": "Function params no return",
+        "type": "function",
         "config": {
             "gap": true,
             "extra": [
@@ -196,6 +198,7 @@
     },
     {
         "name": "Empty extra string",
+        "type": "function",
         "config": {
             "gap": true,
             "extra": [
@@ -359,6 +362,7 @@
     },
     {
         "name": "php-docblocker2.extra",
+        "type": "function",
         "config": {
             "extra": [
                 {

@@ -40,7 +40,7 @@ suite("Variable tests", () => {
             Helper.setConfig(testData.config);
             let variable = new Variable(testPositions[testData.key], editor);
             let actual:Doc = variable.parse();
-            let expected:Doc = new Doc('Undocumented variable');
+            let expected:Doc = new Doc(Doc.TYPE_VARIABLE, 'Undocumented variable');
             if (testData.result.var === undefined) {
                 expected.var = undefined;
             }

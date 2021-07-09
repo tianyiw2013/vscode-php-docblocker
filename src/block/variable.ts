@@ -32,7 +32,7 @@ export default class Variable extends Block
      */
     protected parseVar(key:string, value:any=undefined):Doc
     {
-        let doc = new Doc(TypeUtil.instance.getDefaultMessage(String(key).substr(1), 'variable'));
+        let doc = new Doc(Doc.TYPE_VARIABLE, TypeUtil.instance.getDefaultMessage(String(key).substr(1), 'variable'));
         doc.template = Config.instance.get('variableTemplate');
 
         if (value) {
@@ -45,9 +45,6 @@ export default class Variable extends Block
         }
 
         doc.inline = Config.instance.get('variableInline');
-        if (doc.inline) {
-            doc.message = '';
-        }
 
         return doc;
     }
