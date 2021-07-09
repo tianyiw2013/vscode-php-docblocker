@@ -3,6 +3,7 @@ import {TextEditor, TextDocument} from 'vscode';
 import Helper from './helpers';
 import {Doc, Param} from '../src/doc';
 import Variable from '../src/block/variable';
+import { isArray } from 'util';
 
 suite("Variable tests", () => {
     let editor:TextEditor;
@@ -49,6 +50,9 @@ suite("Variable tests", () => {
             assert.deepEqual(actual, expected);
 
             if (testData.doc !== undefined) {
+                if (isArray(testData.doc)) {
+                    testData.doc = testData.doc.join("\n");
+                }
                 assert.equal(actual.build().value, testData.doc, test.name);
             }
         });

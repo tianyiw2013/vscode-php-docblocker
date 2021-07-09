@@ -14,7 +14,7 @@ All notable changes to the "php-docblocker2" extension will be documented in thi
 "php-docblocker2.extra": [
     {
         "content": "@since ${###:1.0.0}",
-        "before": "param",
+        "after": "message",
         "gapAfter": true,
     },
     {

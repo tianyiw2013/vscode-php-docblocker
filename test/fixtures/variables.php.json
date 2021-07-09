@@ -279,5 +279,91 @@
             "var": "int $inline"
         },
         "doc": "/** @var ${1:int} ${2:\\$inline} ${3} */"
+    },
+    {
+        "key": "inline-with-extra",
+        "config": {
+            "variableInline": true,
+            "variableWithKey": false,
+            "extra": [
+                {
+                    "content": "@since ${###:1.0.0}",
+                    "after": "message",
+                    "gapAfter": true
+                },
+                {
+                    "before": "return",
+                    "gapAfter": true
+                },
+                {
+                    "content": "@see http://php.cn",
+                    "gapBefore": true,
+                    "gapAfter": true
+                },
+                "hello world"
+            ]
+        },
+        "result": {
+            "inline": true,
+            "message": "",
+            "var": "int"
+        },
+        "doc": [
+            "/**",
+            " * ${1}",
+            " *",
+            " * @since ${2:1.0.0}",
+            " *",
+            " * @var ${3:int}",
+            " *",
+            " *",
+            " * @see http://php.cn",
+            " *",
+            " * hello world",
+            " */"
+        ]
+    },
+    {
+        "key": "inline-with-key-extra",
+        "config": {
+            "variableInline": true,
+            "variableWithKey": true,
+            "extra": [
+                {
+                    "content": "@since ${###:1.0.0}",
+                    "after": "message",
+                    "gapAfter": true
+                },
+                {
+                    "before": "return",
+                    "gapAfter": true
+                },
+                {
+                    "content": "@see http://php.cn",
+                    "gapBefore": true,
+                    "gapAfter": true
+                },
+                "hello world"
+            ]
+        },
+        "result": {
+            "inline": true,
+            "message": "",
+            "var": "int $inline"
+        },
+        "doc": [
+            "/**",
+            " * ${1}",
+            " *",
+            " * @since ${2:1.0.0}",
+            " *",
+            " * @var ${3:int} ${4:\\$inline}",
+            " *",
+            " *",
+            " * @see http://php.cn",
+            " *",
+            " * hello world",
+            " */"
+        ]
     }
 ]

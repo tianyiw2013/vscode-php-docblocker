@@ -96,3 +96,8 @@ $inline = 1;
 ////=> inline-with-key
 $inline = 1;
 
+////=> inline-with-extra
+$inline = 1;
+
+////=> inline-with-key-extra
+$inline = 1;
