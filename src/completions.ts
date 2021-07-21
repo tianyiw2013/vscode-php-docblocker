@@ -278,7 +278,7 @@ export default class Completions implements CompletionItemProvider
 
         if (document.lineAt(position).text === '#') {
             let block = new CompletionItem("#[Attribute]", CompletionItemKind.Snippet);
-            block.detail = "PHP DocBlocker";
+            block.detail = "PHP DocBlocker2";
             block.documentation = "Generate a PHP Attribute";
             block.insertText = new SnippetString("[\${1:Attribute}]");
             result.push(block);
@@ -289,7 +289,7 @@ export default class Completions implements CompletionItemProvider
             let documenter:Documenter = new Documenter(match, window.activeTextEditor);
 
             let block = new CompletionItem("/**", CompletionItemKind.Snippet);
-            block.detail = "PHP DocBlocker";
+            block.detail = "PHP DocBlocker2";
             block.documentation = "Generate a PHP DocBlock from the code snippet below.";
             let range = document.getWordRangeAtPosition(position, /\/\*\* \*\//);
             block.range = range;

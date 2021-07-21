@@ -5,7 +5,11 @@ All notable changes to the "php-docblocker2" extension will be documented in thi
 - **☆ My English is so poor, the following content is for reference only, thank you.**
 - **☆ There are no instructions for many features at present. I will add instructions in my spare time in the future.**
 
-## [2.1.10] - 2021-07-25
+## [2.1.11] - 2021-7-21
+### Fixed
+- Does not work in WSL2. [#13](https://github.com/tianyiw2013/vscode-php-docblocker/issues/13)
+
+## [2.1.10] - 2021-7-9
 ### Added
 #### `php-docblocker2.extra` add `scope`
 ```json
@@ -80,7 +84,7 @@ class MyClass
 $myclass = new MyClass;
 ```
 
-## [2.1.9] - 2021-07-25
+## [2.1.9] - 2021-7-9
 ### Added
 #### You can insert any content by setting `php-docblocker2.extra`. The effect is as follows: (通过设置项`php-docblocker2.extra`实现任意插入内容，效果如下所示：)
 
@@ -128,7 +132,7 @@ function likethis(string $username, string $password, string $confirm_password =
 }
 ```
 
-## [2.1.8] - 2021-07-25
+## [2.1.8] - 2021-7-9
 ### Added
 - Add a setting `defaultParameterDescription`(增加设置项：默认参数描述) [#9](https://github.com/tianyiw2013/vscode-php-docblocker/issues/9)
   - `false (default value)` A blank placeholder, you can tab to the placeholder to complete the description. (默认为false，使用空白占位符，你可以通过Tab键定位到占位符手工输入参数描述)
@@ -149,6 +153,7 @@ function likethis(string $username, string $password, string $confirm_password =
 
 ### Fixed
 - Failed to detect return type when return type contains spaces (返回类型含有空格导致返回值类型识别错误) [#10](https://github.com/tianyiw2013/vscode-php-docblocker/issues/10)
+
 ```php
 <?php
 /**
@@ -164,6 +169,7 @@ function likethis(): bool | int
 ## [2.1.7] - 2021-05-25
 ### Added
 #### Support for `foreach(...as $value)` with variable docblock
+
 ```php
 <?php
 /** @var mixed $value  */
@@ -173,6 +179,7 @@ foreach ([] as $value) {}
 foreach ([] as $key => $value) {}
 ```
 #### Support for `while($value=...)` with variable docblock
+
 ```php
 <?php
 /** @var mixed $value  */

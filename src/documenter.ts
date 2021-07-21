@@ -3,7 +3,7 @@ import FunctionBlock from "./block/function";
 import Property from "./block/property";
 import Class from "./block/class";
 import {Doc, Param} from "./doc";
-import Variable from "./block/variable";
+import VariableBlock from "./block/VariableBlock";
 import Foreach from "./block/foreach";
 import While from "./block/while";
 
@@ -62,7 +62,7 @@ export default class Documenter
             return cla.parse().build();
         }
 
-        let variable = new Variable(this.targetPosition, this.editor);
+        let variable = new VariableBlock(this.targetPosition, this.editor);
         if (variable.test()) {
             return variable.parse().build();
         }

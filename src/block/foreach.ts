@@ -1,10 +1,10 @@
 import { Doc, Param } from "../doc";
-import Variable from "./variable";
+import VariableBlock from "./VariableBlock";
 
 /**
  * Represents an var block for `foreach`
  */
-export default class Foreach extends Variable
+export default class Foreach extends VariableBlock
 {
 
     /**

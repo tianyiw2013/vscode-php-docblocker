@@ -1,10 +1,10 @@
 import { Doc, Param } from "../doc";
-import Variable from "./variable";
+import VariableBlock from "./VariableBlock";
 
 /**
  * Represents an var block for `while`
  */
-export default class While extends Variable
+export default class While extends VariableBlock
 {
 
     /**
