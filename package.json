@@ -1,8 +1,8 @@
 {
   "name": "php-docblocker2",
-  "displayName": "PHP DocBlocker 2",
+  "displayName": "PHP DocBlocker2",
   "description": "A simple, dependency free PHP specific DocBlocking package",
-  "version": "2.1.11",
+  "version": "2.1.13",
   "license": "MIT",
   "publisher": "tianyiw",
   "author": "tianyiw <tianyiw@vip.qq.com> & Neil Brayfield <dev@brayfield.uk>",
@@ -16,7 +16,22 @@
   "keywords": [
     "php",
     "autocomplete",
-    "docblock"
+    "block",
+    "docblock",
+    "phpdoc",
+    "doc",
+    "blocker2",
+    "doc2",
+    "intellisense",
+    "generator",
+    "注解",
+    "文档",
+    "注释",
+    "attribute",
+    "documentor",
+    "php8",
+    "vphp",
+    ".php"
   ],
   "activationEvents": [
     "onLanguage:php",
@@ -40,7 +55,7 @@
     ],
     "configuration": {
       "type": "object",
-      "title": "PHP DocBlocker 2",
+      "title": "PHP DocBlocker2",
       "properties": {
         "php-docblocker2.autoIgnorePropertyType": {
           "type": "boolean",
