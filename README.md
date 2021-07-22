@@ -10,6 +10,9 @@ Basic PHP DocBlocking extension.
 
 We now have a set of unit tests and some full coverage on the parsing of signatures as well as continuous integration. This should ensure the extension remains stable as development progresses.
 
+## Demo
+![demo](https://user-images.githubusercontent.com/4644588/126579584-a9bcff4f-24b9-4b78-a7f1-049f102bf1ed.gif)
+
 ## Thanks
 This extension forked from [neild3r/vscode-php-docblocker](https://github.com/neild3r/vscode-php-docblocker).
 Because the original author([neild3r](https://github.com/neild3r)) is not active recently, I decided to continue to maintain the extension and release a new version [2.1.4](https://marketplace.visualstudio.com/items?itemName=tianyiw.php-docblocker2).
