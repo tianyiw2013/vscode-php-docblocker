@@ -31,7 +31,9 @@
     "documentor",
     "php8",
     "vphp",
-    ".php"
+    ".php",
+    "comments",
+    "annotation"
   ],
   "activationEvents": [
     "onLanguage:php",
