@@ -5,6 +5,10 @@ All notable changes to the "php-docblocker2" extension will be documented in thi
 - **☆ My English is so poor, the following content is for reference only, thank you.**
 - **☆ There are no instructions for many features at present. I will add instructions in my spare time in the future.**
 
+## [2.1.15] - 2021-7-28
+### Fixed
+- Supported workspace trust.
+
 ## [2.1.11] - 2021-7-21
 ### Fixed
 - Does not work in WSL2. [#13](https://github.com/tianyiw2013/vscode-php-docblocker/issues/13)
